@@ -1,8 +1,8 @@
 public class Hello {
 
     public static void main(String[] args) {
-        Person gil = new Person("Gil",16);
-        System.out.println(String.format("My name is %s and my age is %d", gil.myName, gil.myAge));
+        Person Gil = new Person("Gil Friedman",16);
+        System.out.println(String.format("My name is %s and my age is %d", Gil.myName, Gil.myAge));
 
     }
 }
