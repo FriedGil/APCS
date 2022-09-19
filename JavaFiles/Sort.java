@@ -8,7 +8,7 @@ public class Sort {
         }
         long endTime = System.nanoTime();
         long duration = endTime - startTime;
-        double elapsedTimeInSecond = (double) duration / 1_000_000_000;
+        double elapsedTimeInSecond = (double) duration / 1000000000;
         System.out.println(String.format(("Duration: %f"),elapsedTimeInSecond));
 
 
@@ -27,7 +27,7 @@ public class Sort {
         }
         return inarr;
     }
-    // private static int[] merge_sort(int[] inarr) {
+    // private static int[] mergeSort(int[] inarr) {
 
     // }
 }
