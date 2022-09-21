@@ -1,10 +1,10 @@
 public class Sort {
-    public static void Main(String[] args){
+    public static void main(String[] args){
         int[] arr = {5,2,3,7,1,9,5,34,6,4,7,8,2,5,19};
         long startTime = System.nanoTime();
         for (int i = 0; i<100000; i++) {
             arr = bubbleSort(arr);
-        }
+        } 
         long endTime = System.nanoTime();
         long duration = endTime - startTime;
         double elapsedTimeInSecond = (double) duration / 1000000000;
