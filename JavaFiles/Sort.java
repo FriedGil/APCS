@@ -1,8 +1,10 @@
+import java.util.Arrays;
+
 public class Sort {
     public static void main(String[] args){
-        int[] arr = {5,2,3,7,1,9,5,34,6,4,7,8,2,5,19};
+        int[] arr = {5,2,3,7,1,9,5,34,6,4,7,8,2,5,19};    
         long startTime = System.nanoTime();
-        for (int i = 0; i<100000; i++) {
+        for (int i = 0; i<1000000; i++)  { // 1 million loops
             arr = bubbleSort(arr);
         } 
         long endTime = System.nanoTime();
@@ -11,7 +13,7 @@ public class Sort {
         for (int element:arr) {
             System.out.print(element + " ");
         }
-        System.out.println(String.format(("Bubble Sort Duration: %f"),elapsedTimeInSecond));
+        System.out.println(String.format(("Bubble Sort Duration: %f Seconds"),elapsedTimeInSecond));
 
 
     }

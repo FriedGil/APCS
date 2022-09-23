@@ -14,5 +14,4 @@ class Person{
         myName = name;
         myAge = age;
     }
-
 }
