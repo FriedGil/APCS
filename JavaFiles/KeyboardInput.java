@@ -1,5 +1,4 @@
 import java.util.Scanner;
-
 public class KeyboardInput {
     public static void main(String[] args) {
         averageGrades();
@@ -19,7 +18,7 @@ public class KeyboardInput {
             System.out.println("Please enter your " + subject + " grade:");
             gradeSum += scan.nextInt();
         }
-        double average = (gradeSum / subjects.length);
+        double average = ( (double) gradeSum / subjects.length);
         System.out.println("Your average is " + average);
     }
 }
