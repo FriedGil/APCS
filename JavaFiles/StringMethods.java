@@ -2,8 +2,11 @@ import java.util.Scanner;
 
 public class StringMethods {
     public static void main(String[] args) {
-        msft();
+        // msft();
+        // plusCalculator();
+        getFirstName();
     }
+
     static void plusCalculator(){
     Scanner scan = new Scanner(System.in);
     System.out.println("Enter your math problem");
@@ -15,6 +18,7 @@ public class StringMethods {
     double num2 = Double.parseDouble(second_arg);
     System.out.println(num1+num2);
     }
+
     static void msft(){
         String str = "Microsoft";
         int loc = str.indexOf("soft");
@@ -22,4 +26,14 @@ public class StringMethods {
         String str2 = str.substring(loc, str.length());
         System.out.println(str1 + ", " + str2);
     }
+
+    static void getFirstName(){
+        Scanner scan = new Scanner(System.in);
+        System.out.println("Enter your name");
+        String name = scan.nextLine();
+        int loc = name.indexOf(" ");
+        System.out.println("Hello " + name.substring(0, loc));
+
+
+    }    
 }
