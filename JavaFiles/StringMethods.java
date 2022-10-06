@@ -1,10 +1,8 @@
 import java.util.Scanner;
-
 public class StringMethods {
     public static void main(String[] args) {
-        // msft();
         // plusCalculator();
-        getFirstName();
+        extractDate();
     }
 
     static void plusCalculator(){
@@ -17,15 +15,9 @@ public class StringMethods {
     double num1 = Double.parseDouble(first_arg);
     double num2 = Double.parseDouble(second_arg);
     System.out.println(num1+num2);
+    scan.close();
     }
 
-    static void msft(){
-        String str = "Microsoft";
-        int loc = str.indexOf("soft");
-        String str1 = str.substring(loc);
-        String str2 = str.substring(loc, str.length());
-        System.out.println(str1 + ", " + str2);
-    }
 
     static void getFirstName(){
         Scanner scan = new Scanner(System.in);
@@ -33,7 +25,46 @@ public class StringMethods {
         String name = scan.nextLine();
         int loc = name.indexOf(" ");
         System.out.println("Hello " + name.substring(0, loc));
+        scan.close();
+    }
+
+    static void extractParantheses(){
+        Scanner scan = new Scanner(System.in);
+        System.out.println("Enter text");
+        String text = scan.nextLine();
+        int loc1 = text.indexOf("(");
+        int loc2 = text.indexOf(")");
+        System.out.println(text.substring(loc1 + 1,loc2));
+        scan.close();
+
+    }
+
+    static void extractDate(){
+        Scanner scan = new Scanner(System.in);
+        System.out.println("Enter date: ");
+        String date = scan.nextLine();
+
+        int loc1 = date.indexOf("/");
+
+        int loc2 = date.lastIndexOf("/");
+
+        int month = Integer.parseInt(date.substring(0,loc1));
+        int day = Integer.parseInt(date.substring(loc1+1,loc2));
+        int year = Integer.parseInt(date.substring(loc2+1));
+
+        System.out.println("Month: " + month);
+        System.out.println("Day: " + day);
+        System.out.println("Year: " + year);
 
 
-    }    
+
+
+        scan.close();
+
+
+
+
+        scan.close();
+    }
+
 }
