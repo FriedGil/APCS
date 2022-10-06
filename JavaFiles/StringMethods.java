@@ -45,7 +45,6 @@ public class StringMethods {
         String date = scan.nextLine();
 
         int loc1 = date.indexOf("/");
-
         int loc2 = date.lastIndexOf("/");
 
         int month = Integer.parseInt(date.substring(0,loc1));
@@ -56,15 +55,8 @@ public class StringMethods {
         System.out.println("Day: " + day);
         System.out.println("Year: " + year);
 
-
-
-
         scan.close();
 
-
-
-
-        scan.close();
     }
 
 }
