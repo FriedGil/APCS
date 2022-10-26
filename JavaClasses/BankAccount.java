@@ -1,19 +1,35 @@
 public class BankAccount {
+
     private String name;
     private int balance;
-    public BankAccount(String n, int a){
+
+    public BankAccount(String n, int b) {
         this.name = n;
-        this.balance = a;
+        this.balance = b;
     }
-    public String getName(){
+
+    public BankAccount() {
+        this.name = "Unknown";
+        this.balance = 0;
+    }
+
+    public String getName() {
         return name;
     }
 
-    public int getBalance(){
+    public int getBalance() {
         return balance;
     }
 
-    public String toString(){
-        return(name + " has $" + balance);
+    public String toString() {
+        return (name + " has $" + balance);
+    }
+
+    public void deposit(int amount) {
+        balance += amount;
+    }
+
+    public void withdraw(int amount) {
+        balance -= amount;
     }
 }
