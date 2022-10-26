@@ -14,4 +14,7 @@ class Person{
         myName = name;
         myAge = age;
     }
+    public char[] getName() {
+        return null;
+    }
 }
