@@ -10,16 +10,23 @@ public class GilFriedmanTest {
     public static void main(String[] args) {
         // Creating and printing table 1
         Row[] rows = new Row[4];
-        rows[0] = new Row("Row 1", new int[] { 1, 2, 3 });
+        rows[0] = new Row("r1", new int[] { 1, 2, 3 });
         rows[1] = new Row(new int[] { 4, 5 });
         rows[2] = new Row("Row 3");
         rows[3] = new Row();
         
-        if (rows[0].getName() == "Row 1") {
-            System.out.println("Row Getter and Setter Test Passed");
+        if (rows[0].getName() == "r1") {
+            System.out.println("Row Getter Passed");
         } else {
-            System.out.println("Row Getter and Setter Test Failed");
+            System.out.println("Row Getter Failed");
         }
+
+        if (rows[1].getMedian() == 4.5) System.out.println("median passed");
+
+        rows[0].setName("Row 1");
+        if (rows[0].getName() == "Row 1") System.out.println("Setter passed");
+        else System.out.println("Row Setter failed");
+
 
         Table table1 = new Table(rows, "Table 1");
         if (Arrays.equals(rows[2].getValues(), rows[3].getValues()))  System.out.println("Constructor Tests passed");
@@ -43,10 +50,8 @@ public class GilFriedmanTest {
         if (table2.getRowByIndex(1).getValue(table2.getRowByIndex(1).getLength() - 1) == 5) System.out.println("getRowByIndex Test passed");
         else System.out.println("getRowByIndex Test passed");
 
-        Row emptyRow3 = new Row("Row 3");
-        table2.addRow(emptyRow3);
-        Row emptyRow = new Row();
-        table2.addRow(emptyRow);
+        table2.addRow(new Row("Row 3"));
+        table2.addRow(new Row());
 
         if (table1.equals(table2)) System.out.println("Table Equals Test passed");
         else System.out.println("Table Equals Test failed");
@@ -70,9 +75,6 @@ public class GilFriedmanTest {
             System.out.println("Print Formatted and toString methods Test passed");
         }
 
-
     }
-
-
 
 }

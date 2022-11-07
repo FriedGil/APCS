@@ -1,5 +1,6 @@
 package TableProject;
 
+import java.lang.reflect.Array;
 import java.util.Arrays;
 
 public class Row {
@@ -75,13 +76,12 @@ public class Row {
     }
 
     public int compareTo(Row other) {
-        return this.sum() - other.sum();
+        return sum() - other.sum();
     }
 
     public boolean contains(int value) {
         for (int i : values)
-            if (i == value)
-                return true;
+            if (i == value) return true;
         return false;
     }
 
@@ -97,5 +97,12 @@ public class Row {
 
     public int getMean() {
         return sum() / length;
+    }
+
+    public double getMedian(){
+        int[] sorted = values.clone();
+        Arrays.sort(sorted);
+        if (length % 2 == 0) return (sorted[length/2] + sorted[length/2-1])/2.0;
+        else return (sorted[length/2]);
     }
 }
