@@ -1,6 +1,10 @@
 package TableProject;
 
 import java.util.Arrays;
+import java.util.Scanner; 
+import java.io.*;  
+
+
 
 public class Table {
     private Row[] rows;
@@ -14,6 +18,29 @@ public class Table {
     public Table() {
         this.rows = new Row[0];
         this.tableName = "Unnamed Table";
+    }
+
+    public Table(String csvpath, int numColumns){
+        tableName = csvpath;
+        this.rows = new Row[0];
+        try {
+            Scanner sc = new Scanner(new File(csvpath));
+            sc.useDelimiter(",");
+            int i = 0;
+            while (sc.hasNext()) System.out.print(sc.next());
+            // {  
+            //     if ( i < numColumns){
+            //         this.addRow(sc.next(), new int[0]);
+            //     }
+            //     else {
+            //         rows[i % numColumns].append(sc.nextInt());
+            //     }
+            //     i++;
+            // }  
+        } catch (FileNotFoundException e) {
+            System.out.println("File not found");
+        } 
+
     }
 
     public Row[] getRows() {
