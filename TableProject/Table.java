@@ -21,22 +21,32 @@ public class Table {
     }
 
     public Table(String csvpath, int numColumns){
+        
+        
         tableName = csvpath;
         this.rows = new Row[0];
         try {
             Scanner sc = new Scanner(new File(csvpath));
             sc.useDelimiter(",");
             int i = 0;
-            while (sc.hasNext()) System.out.print(sc.next());
-            // {  
-            //     if ( i < numColumns){
-            //         this.addRow(sc.next(), new int[0]);
-            //     }
-            //     else {
-            //         rows[i % numColumns].append(sc.nextInt());
-            //     }
-            //     i++;
-            // }  
+            while (sc.hasNext()) 
+            {  
+                String entry = sc.next();
+                if (entry.equals("\\n")){
+                    System.out.println("here");
+                }
+
+
+                if ( i < numColumns){
+                    this.addRow(entry, new int[0]);
+                }
+
+
+                else {
+                    rows[i % numColumns].append(Integer.parseInt(entry) );
+                }
+                i++;
+            }  
         } catch (FileNotFoundException e) {
             System.out.println("File not found");
         } 
@@ -124,6 +134,7 @@ public class Table {
             row.append(value);
         }
     }
+    
 
     public void addRow(String name, int[] values) {
         Row[] newRows = new Row[rows.length + 1];

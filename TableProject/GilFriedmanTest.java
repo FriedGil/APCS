@@ -75,7 +75,7 @@ public class GilFriedmanTest {
             System.out.println("Print Formatted and toString methods Test passed");
         }
 
-        Table tcsv = new Table("TableProject\\test.csv",3);
+        Table tcsv = new Table("TableProject\\test.csv",4);
         tcsv.printFormatted();
 
     }
