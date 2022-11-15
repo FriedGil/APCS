@@ -1,5 +1,3 @@
-package Unit3;
-
 public class Bin2DecTest{
     public static void main(String[] args){
         int test,answer,yourAnswer;
@@ -67,8 +65,11 @@ public class Bin2DecTest{
         int i = 0;
         int num = 1;
         while (n>i){
-            if (bString.substring(n-i,n-i) == "0")result+=num;
+            if (bString.charAt(n-i-1) == '1'){
+                result+=num;
+            }
             num *=2;
+            i++;
         }
 
         return result;
