@@ -1,5 +1,5 @@
 import java.util.Scanner;
-public class Loops {
+public class WhileLoops {
 	public static void main(String[] args){
 		printEven();
 		nameGetter();

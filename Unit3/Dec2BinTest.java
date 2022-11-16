@@ -68,5 +68,3 @@ public class Dec2BinTest{
         return Integer.parseInt(result);
     }
 }
-
-// 5 
