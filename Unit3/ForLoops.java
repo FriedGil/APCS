@@ -1,6 +1,9 @@
 public class ForLoops {
     public static void main(String[] args){
-        FindPrimes(500);
+        {
+            int i = 0;
+            System.out.println(i);
+        }
         
     }
 
@@ -43,6 +46,7 @@ public class ForLoops {
         i++;
 
     }
-}
-}
 
+    
+}
+}
