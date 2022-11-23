@@ -94,8 +94,8 @@ public class Row {
         length++;
     }
 
-    public int getMean() {
-        return sum() / length;
+    public double getMean() {
+        return (double) sum() / length;
     }
 
     public double getMedian(){

@@ -135,7 +135,6 @@ public class Table {
         }
     }
     
-
     public void addRow(String name, int[] values) {
         Row[] newRows = new Row[rows.length + 1];
         for (int i = 0; i < rows.length; i++) {

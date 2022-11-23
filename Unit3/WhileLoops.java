@@ -9,7 +9,7 @@ public class WhileLoops {
 		String response = "";
 		Scanner scan = new Scanner(System.in);
 		while (!(response=scan.next()).equals("stop")) System.out.println("Hello " + response);
-
+		scan.close();
 
 	}
 
