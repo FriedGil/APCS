@@ -1,4 +1,4 @@
-public class Sort {
+public class Sorts {
     public static void main(String[] args){
         int[] arr = {5,2,3,7,1,9,5,34,6,4,7,8,2,5,19};    
         long startTime = System.nanoTime(); 
