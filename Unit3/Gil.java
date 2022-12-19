@@ -3,7 +3,7 @@ import java.util.Random;
 
 public class Gil {
     public static void print(Object x){
-        System.out.println(x);
+        System.out.println("Gil Says: " + x);
     }
     public static int randint(int f, int c){
         Random rand = new Random();

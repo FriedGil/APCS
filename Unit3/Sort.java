@@ -1,34 +1,30 @@
 public class Sort {
     public static void main(String[] args){
         int[] data = {3,2,1};
-        printArr(bubbleSort(data));
+        selectionSort(data);
+        printArr(data);
 
 
     }
 
     public static void printArr(int[] arrs){
         for (int n: arrs){
-            System.out.println(n);
+            Gil.print(n);
         }
     }
 
     public static void selectionSort(int[] arr){
+        int localMin;
         for (int i = 0; i <arr.length; i++){
-            System.out.println("" + localMinIndex(arr,i,arr.length));
-            swap(arr,localMinIndex(arr,i,arr.length),i);
+            localMin = arr[i];
+            for (int j = i; j <arr.length-1; j++){
+                if (arr[j] < localMin) localMin = j;
+            }
+            swap(arr, localMin, i);
         }
     }
 
-    private static int localMinIndex(int[] arr, int start, int end){
-        int min = arr[1];
-        int minIndex = 0;
-        for (int i = start; i < end; i++) if (arr[i] < min) 
-        {
-            min = arr[i];
-            minIndex = i;
-        }
-        return minIndex;
-    }
+
 
     private static void swap(int[] arr, int n1, int n2){
         int temp = arr[n1];
