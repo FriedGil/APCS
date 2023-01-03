@@ -15,15 +15,18 @@ public class Sort {
 
     public static void selectionSort(int[] arr){
         int localMin;
+        int index;
         for (int i = 0; i <arr.length; i++){
             localMin = arr[i];
             for (int j = i; j <arr.length-1; j++){
-                if (arr[j] < localMin) localMin = j;
+                if (arr[j] < localMin) {
+                    localMin = j;
+                    index = i;
+                }
             }
             swap(arr, localMin, i);
         }
     }
-
 
 
     private static void swap(int[] arr, int n1, int n2){
