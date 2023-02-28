@@ -12,9 +12,6 @@ public class ArrayRemoveAndInsertTest {
     }    
     public static void insertAtIndex (String[] strs, int index, String elem)
     {
-        //if (strs[strs.length] != null){
-        //    System.out.println(elem);
-        //}                 I made your code better :)
         for (int i = strs.length-1; i > index; i--){
             strs[i] = strs[i-1];
         }
