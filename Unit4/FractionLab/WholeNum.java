@@ -1,4 +1,4 @@
-package FractionLab;
+package Unit4.FractionLab;
 
 public class WholeNum extends Fraction {
     public WholeNum(){

@@ -1,4 +1,4 @@
-package HuggingBearLab;
+package Unit5.HuggingBearLab;
 
 //testing class built by Huo Chen; Last Update 2/13/2023
 public class SortingBear

@@ -1,4 +1,4 @@
-package HuggingBearLab;
+package Unit5.HuggingBearLab;
 
 public class DaddyBear extends Bear {
     private int hugs;

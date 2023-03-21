@@ -1,4 +1,4 @@
-package HuggingBearLab;
+package Unit5.HuggingBearLab;
 
 public abstract class Bear implements Comparable<Bear>{
 
