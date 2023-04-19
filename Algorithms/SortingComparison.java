@@ -21,13 +21,9 @@ public class SortingComparison
     System.out.println("Selection Sort Run-time =  " + (time2 - time1));
     
     time1 = System.nanoTime();
-    bogosort(arr2);
+    mergeSort(arr2);
     time2 = System.currentTimeMillis();
-    System.out.println("Bogo Sort Run-time =  " + (time2 - time1));
-
-    insertionSort(arr2);
-    time2 = System.nanoTime();
-    System.out.println("Insertion Sort Run-time =  " + (time2 - time1));
+    System.out.println("Merge Sort Run-time =  " + (time2 - time1));
 
     
     time1 = System.nanoTime();
@@ -80,6 +76,52 @@ public class SortingComparison
         }
     }
 
+  }
+
+  public static void mergeSort(int[] arr)
+  {
+    mergeSortHelper(arr, 0, arr.length-1, new int[arr.length]);
+  }
+  
+  private static void mergeSortHelper(int[] arr, int start, int end, int[] temp)
+  {
+    if (start == end) return;
+    int middle = (start + end) / 2;
+    mergeSortHelper(arr, start, middle, temp);
+    mergeSortHelper(arr, middle + 1, end, temp);
+    merge(arr, start, middle, end, temp);
+  }
+  
+  private static void merge(int[] arr, int start, int middle, int end, int[] temp)
+  {
+    int index1 = start;
+    int index2 = middle + 1;
+    int indexTemp = start;
+    while(index1 <= middle && index2 <= end)
+    {
+      if(arr[index1] < arr[index2]){
+        temp[indexTemp] = arr[index1];
+        index1++;
+      }
+      else{
+        temp[indexTemp] = arr[index2];
+        index2++;
+      }
+      indexTemp++;
+    }
+    while(index1 <= middle)
+    {
+      temp[indexTemp] = arr[index1];
+      index1++;
+      indexTemp++;
+    }
+    while(index2 <= end)
+    {
+      temp[indexTemp] = arr[index2];
+      index2++;
+      indexTemp++;
+     }
+    for(int i = start; i <= end; i++) arr[i] = temp[i];  
   }
 
   public static boolean sorted(int[] arr){
