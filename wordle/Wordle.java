@@ -12,6 +12,8 @@ public class Wordle {
         String guess;
         String answer;
         String filter;
+        String letters;
+
         int attempts = 0;
         try{
             f = new File("sgb-words.txt");
@@ -27,11 +29,17 @@ public class Wordle {
           }
           fileScanner.close();
         answer = a.get((int) (Math.random()*a.size()));
+        filter = "";
+        letters = "";
         while (attempts < 100) {
-            guess = a.get(0);
-            if (attempts == 0) guess = "adieu";
-            filter = "";
-            String letters = "";
+            guess = "adieu";
+            while (letters.length() > 0){
+                guess = a.get(0);
+                int matches = 0;
+                for (int i = 0; i < letters.length(); i++) if (guess.indexOf(letters.substring(i, i+1)) >= 0) matches++;
+                if (matches >= letters.length()) break;
+                a.remove(0);
+            }
             if (guess.equals(answer)){
                 return attempts;
             }
